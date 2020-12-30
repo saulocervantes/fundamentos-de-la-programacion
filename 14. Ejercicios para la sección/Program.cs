@@ -33,6 +33,16 @@ namespace _14.Ejercicios_para_la_sección
             var Precio = 4.56;
             const float Impuesto2 = 0.7f;
             double PrecioFinal = Precio + Precio * Impuesto2;
+
+            /*3- Vuelve a realizar el mismo ejercicio, sin usar otra variable disinta para el precio
+             * final. Igualmente debes calcular el precio final de venta, esta vez usando el
+             * operador *=
+             */
+            const float Impuesto3 = 7;
+
+            Precio *= Impuesto3;
+            Precio /= 100;
+            PrecioFinal = Precio;
         }
     }
 }
