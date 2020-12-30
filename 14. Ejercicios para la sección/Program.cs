@@ -97,6 +97,16 @@ namespace _14.Ejercicios_para_la_sección
 
             string[] Titulos = new string[7];
 
+            /*9- Las 3 primeras salas proyectan en 3D, de modo que el precio de entrada es más caro.
+             * Así que ahora tienes que guardar el precio de entrada para cada película.
+             * Para ello usa una matriz, en lugar de un array, donde sigas almacenando el título
+             * de cada película y además su correspondiente precio.
+             */
+
+            string[,] Salas = new string[7,7];
+
+            Salas[0,0] = "Spiderman";
+            Salas[0,1] = "80mxn";
 
         }
     }
