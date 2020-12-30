@@ -103,10 +103,23 @@ namespace _14.Ejercicios_para_la_sección
              * de cada película y además su correspondiente precio.
              */
 
-            string[,] Salas = new string[7,7];
+            string[,] Salas = new string[7,2];
 
             Salas[0,0] = "Spiderman";
             Salas[0,1] = "80mxn";
+
+            /*10- Este multicine hace un exhaustivo mantenimiento de limpieza semanal en
+             * cada sala. De modo que cada sala cierra un día diferente de la semana.
+             * Añade una dimensión a la matriz creada. Almacena el día de la semana
+             * en el que no se podrá ver cada película y así poder informar a los
+             * espectadores.
+             */
+
+            string[,,] SalasCine = new string[7,2,2];
+
+            SalasCine[0,0,0] = "Spiderman";
+            SalasCine[0,1,0] = "80mxn";
+            SalasCine[0, 1, 1] = "Lunes";
 
         }
     }
