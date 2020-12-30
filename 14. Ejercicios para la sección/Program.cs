@@ -91,7 +91,11 @@ namespace _14.Ejercicios_para_la_sección
 
             Total -= DolaresEnvio * TipoDeCambio;
 
+            /*8- Imagina un multicine con 7 salas donde proyectar películas.
+             * Crea un array donde almacenar los títulos de cada una de ellas.
+             */
 
+            string[] Titulos = new string[7];
 
 
         }
