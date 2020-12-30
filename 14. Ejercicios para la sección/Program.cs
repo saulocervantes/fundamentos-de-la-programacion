@@ -54,15 +54,26 @@ namespace _14.Ejercicios_para_la_sección
             PrecioFinal *= 0.85;
 
             /*5- Piensa qué tipos de datos se habrán empleado para estos valores del juego:
-             * Abreviatura del nombre de los Equipos
-             * Contador de goles
-             * Mensajes al usuario
-             * Nombres de Jugadores
-             * Dorsales de Jugadores
-             * Barra de Energía del Jugador
+             * Abreviatura del nombre de los Equipos    string
+             * Contador de goles                        int
+             * Mensajes al usuario                      string
+             * Nombres de Jugadores                     string
+             * Dorsales de Jugadores                    int
+             * Barra de Energía del Jugador             double
              */
-             
 
+            /*6- Esta es una app para control de tu
+             * cuenta bancaria. Puedes observar tu saldo total y
+             * enviar dinero a otras cuentas.
+             * 
+             * ¿Qué operación y variables usarías con esos 2 datos (Saldo disponible y valor a enviar)
+             * cuando el usuario pulse el botón “Continuar” ?
+             */
+
+            Double SaldoDisponible, Envio;
+            SaldoDisponible = 13521.52;
+            Envio = 0;
+            SaldoDisponible -= Envio;
 
         }
     }
