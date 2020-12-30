@@ -43,6 +43,27 @@ namespace _14.Ejercicios_para_la_sección
             Precio *= Impuesto3;
             Precio /= 100;
             PrecioFinal = Precio;
+
+            /*4- Aplícale a ese producto una oferta de descuento del 15%.
+             * Puedes hacerlo de muchas maneras, por ejemplo:
+             * primero multiplicando el precio base por 85 y después diviendo entre 100,
+             * o también multiplicando el precio base por 0.85.
+             * No importa si escoges alguno de estos procedimientos u otros cálculos matemáticos.
+             * Pero hazlo con operadores acumulativos.
+             */
+            PrecioFinal *= 0.85;
+
+            /*5- Piensa qué tipos de datos se habrán empleado para estos valores del juego:
+             * Abreviatura del nombre de los Equipos
+             * Contador de goles
+             * Mensajes al usuario
+             * Nombres de Jugadores
+             * Dorsales de Jugadores
+             * Barra de Energía del Jugador
+             */
+             
+
+
         }
     }
 }
