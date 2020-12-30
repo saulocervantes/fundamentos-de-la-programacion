@@ -75,6 +75,25 @@ namespace _14.Ejercicios_para_la_sección
             Envio = 0;
             SaldoDisponible -= Envio;
 
+            /*7- Este caso es más complejo. El usuario quiere
+             * enviar dinero, pero usando una moneda diferente.
+             * Por lo tanto primero hay que aplicar un valor
+             * al tipo de cambio que se empleará en la cantidad.
+             * Imagina que el usuario quiere enviar 200 dólares.
+             * ¿Qué variables y operaciones usarías para
+             * calcular el saldo final después de pulsar el botón
+             * “Envía dinero”?
+             */
+
+            double TipoDeCambio = 13.1503;
+            double Total = 2695.679997;
+            double DolaresEnvio = 200;
+
+            Total -= DolaresEnvio * TipoDeCambio;
+
+
+
+
         }
     }
 }
