@@ -23,6 +23,16 @@ namespace _14.Ejercicios_para_la_sección
             var EficienciaEnergética = "A";
             bool Resultado;
             const float Gravedad = 9.80665f;
+
+            /*2-El precio base de cierto producto alimenticio es de 4.56€. A tal precio se le tiene
+             * que aplicar un impuesto de 7% para conocer el precio final de venta. Utiliza una
+             * variable para el precio base, una constante para el impuesto y otra variable para
+             * el precio final. Calcula el precio final.
+             */
+
+            var Precio = 4.56;
+            const float Impuesto2 = 0.7f;
+            double PrecioFinal = Precio + Precio * Impuesto2;
         }
     }
 }
