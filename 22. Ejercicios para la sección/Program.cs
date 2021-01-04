@@ -168,59 +168,92 @@ namespace _22.Ejercicios_para_la_sección
              * estructurar los datos que simulen la ventana mostrada.
              */
 
-            string[,] Saldos = new string[4, 3];
-            string Header = null;
-            decimal Total = 0;
+            //string[,] Saldos = new string[4, 3];
+            //string Header = null;
+            //decimal Total = 0;
 
-            // Llenado de la Tabla.
-            Saldos[0, 0] = "Cuentas corrientes";
-            Saldos[0, 1] = "2100";
-            Saldos[0, 2] = "Cuentas ";
-            Saldos[1, 0] = "Cuentas corrientes";
-            Saldos[1, 1] = "1000";
-            Saldos[1, 2] = "Cuentas ";
-            Saldos[2, 0] = "Préstamos personales";
-            Saldos[2, 1] = "10000";
-            Saldos[2, 2] = "Préstamos";
-            Saldos[3, 0] = "Tarjetas de crédito";
-            Saldos[3, 1] = "5250";
-            Saldos[3, 2] = "Tarjetas";
+            //// Llenado de la Tabla.
+            //Saldos[0, 0] = "Cuentas corrientes";
+            //Saldos[0, 1] = "2100";
+            //Saldos[0, 2] = "Cuentas ";
+            //Saldos[1, 0] = "Cuentas corrientes";
+            //Saldos[1, 1] = "1000";
+            //Saldos[1, 2] = "Cuentas ";
+            //Saldos[2, 0] = "Préstamos personales";
+            //Saldos[2, 1] = "10000";
+            //Saldos[2, 2] = "Préstamos";
+            //Saldos[3, 0] = "Tarjetas de crédito";
+            //Saldos[3, 1] = "5250";
+            //Saldos[3, 2] = "Tarjetas";
 
-            for (int i = 0; i < Saldos.GetLength(0); i++)
-            {
+            //for (int i = 0; i < Saldos.GetLength(0); i++)
+            //{
                 
-                for (int j = 0; j < Saldos.GetLength(1)-1; j++)
-                {
-                    // Condición para cambiar el encabezado.
-                    if (Header != Saldos[i, 2])
-                    {
-                        Header = Saldos[i, 2];
-                        // Ciclo para determinar el total del encabezado.
-                        for (int k = 0; k <= Saldos.GetLength(1); k++)
-                        {
-                            if (Header == Saldos[k,2])
-                            {
-                                Total += decimal.Parse(Saldos[k, 1]);
-                            }
-                        }
+            //    for (int j = 0; j < Saldos.GetLength(1)-1; j++)
+            //    {
+            //        // Condición para cambiar el encabezado.
+            //        if (Header != Saldos[i, 2])
+            //        {
+            //            Header = Saldos[i, 2];
+            //            // Ciclo para determinar el total del encabezado.
+            //            for (int k = 0; k <= Saldos.GetLength(1); k++)
+            //            {
+            //                if (Header == Saldos[k,2])
+            //                {
+            //                    Total += decimal.Parse(Saldos[k, 1]);
+            //                }
+            //            }
 
-                        // Impresión para el encabezado con el total.
-                        Console.WriteLine("{0}\t\t\t{1} Gs.", Saldos[i, 2], Total);
-                        Total = 0;
-                    }
-                    // Impresión de datos
-                    if (j == 0)
-                    {
-                        Console.Write("{0}\t", Saldos[i, j]);
-                    }
-                    else
-                    {
-                        Console.WriteLine("{0} Gs.", Saldos[i, j]);
-                    }
-                }
+            //            // Impresión para el encabezado con el total.
+            //            Console.WriteLine("{0}\t\t\t{1} Gs.", Saldos[i, 2], Total);
+            //            Total = 0;
+            //        }
+            //        // Impresión de datos
+            //        if (j == 0)
+            //        {
+            //            Console.Write("{0}\t", Saldos[i, j]);
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("{0} Gs.", Saldos[i, j]);
+            //        }
+            //    }
+            //}
+            //Console.ReadLine();
+
+            /* 11- Si una casa tiene un valor de 75.000€ usa el elemento switch para establecer
+             * el precio final de venta dependiendo del tipo de consumo eléctrico que tenga.
+             * 
+             * 12 - ¿Te diste cuenta de la importancia de usar un elemento break en cada caso?
+             * ¿Observaste también que no era necesario añadir nada en caso de ser tipo “C”?
+             */
+
+            decimal Precio = 75000;
+            decimal PrecioFinal = 0;
+            char Categoria = 'C';
+
+            Console.WriteLine("Ingresa la categoría del consumo de energía de la casa, representada por una letra de la A-E.");
+            char.TryParse(Console.ReadLine(), out Categoria);
+            switch (Categoria)
+            {
+                case 'A':
+                    PrecioFinal = Precio * 1.20m;
+                    break;
+                case 'B':
+                    PrecioFinal = Precio * 1.10m;
+                    break;
+                case 'D':
+                    PrecioFinal = Precio * 0.90m;
+                    break;
+                case 'E':
+                    PrecioFinal = Precio * 0.80m;
+                    break;
+                default:
+                    PrecioFinal = Precio;
+                    break;
             }
-            Console.ReadLine();
-
+            Console.WriteLine("El precio de la casa es de ${0} y su categoría de consumo eléctrico es {1}.",PrecioFinal,Categoria);
+            Console.ReadKey();
         }
     }
 }
