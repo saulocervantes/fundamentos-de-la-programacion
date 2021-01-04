@@ -101,7 +101,7 @@ namespace _22.Ejercicios_para_la_sección
             //    {
             //        continue;
             //    }
-                
+
             //}
 
             /* 8- En esta ventana podemos ver el listado de gastos. Imaginemos
@@ -110,6 +110,10 @@ namespace _22.Ejercicios_para_la_sección
              * 
              * ¿Qué bucle usarías para recorrer toda esa información y mostrarla?
              * Un bucle for.
+             * 
+             * 9- Dando por buena la estructura de la matriz descrita anteriormente,
+             * ¿sabrías incluir un if dentro del bucle elegido en el ejercicio 8 para filtrar los gastos,
+             * por ejemplo, mostrando solo aquellos superiores a 50€?
              */
 
             string[,] Movimientos = new string[5, 3];
@@ -138,7 +142,14 @@ namespace _22.Ejercicios_para_la_sección
             {
                 for (int j = 0; j < Movimientos.GetLength(1); j++)
                 {
-                    Console.WriteLine("{0}", Movimientos[i, j]);
+                    /* Aquí uso el método Math.Abs que devuelve el valor absoluto de un número (es decir que le quita el signo).
+                     * También pude poner el valor positivo en el arreglo, pero decidi hacerlo de esta forma.
+                     */
+
+                    {
+                        if (Math.Abs(decimal.Parse(Movimientos[i,2])) > 50) 
+                        Console.WriteLine("{0}", Movimientos[i, j]);
+                    }
                 }
             }
             Console.ReadLine();
