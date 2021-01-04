@@ -1,0 +1,7 @@
+F:\02 Cursos\Fundamentos de Programación\Repositorio\22. Ejercicios para la sección\bin\Debug\_22.Ejercicios_para_la_sección.exe.config
+F:\02 Cursos\Fundamentos de Programación\Repositorio\22. Ejercicios para la sección\bin\Debug\_22.Ejercicios_para_la_sección.exe
+F:\02 Cursos\Fundamentos de Programación\Repositorio\22. Ejercicios para la sección\bin\Debug\_22.Ejercicios_para_la_sección.pdb
+F:\02 Cursos\Fundamentos de Programación\Repositorio\22. Ejercicios para la sección\obj\Debug\22. Ejercicios para la sección.csprojAssemblyReference.cache
+F:\02 Cursos\Fundamentos de Programación\Repositorio\22. Ejercicios para la sección\obj\Debug\22. Ejercicios para la sección.csproj.CoreCompileInputs.cache
+F:\02 Cursos\Fundamentos de Programación\Repositorio\22. Ejercicios para la sección\obj\Debug\_22.Ejercicios_para_la_sección.exe
+F:\02 Cursos\Fundamentos de Programación\Repositorio\22. Ejercicios para la sección\obj\Debug\_22.Ejercicios_para_la_sección.pdb
