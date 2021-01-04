@@ -116,39 +116,106 @@ namespace _22.Ejercicios_para_la_sección
              * por ejemplo, mostrando solo aquellos superiores a 50€?
              */
 
-            string[,] Movimientos = new string[5, 3];
+            //string[,] Movimientos = new string[5, 3];
 
-            Movimientos[0, 0] = "Disposición de efectivo en cajero.";
-            Movimientos[0, 1] = "18/05/11";
-            Movimientos[0, 2] = "-60";
+            //Movimientos[0, 0] = "Disposición de efectivo en cajero.";
+            //Movimientos[0, 1] = "18/05/11";
+            //Movimientos[0, 2] = "-60";
 
-            Movimientos[1, 0] = "Pago con tarjeta de gasollineras.";
-            Movimientos[1, 1] = "18/05/11";
-            Movimientos[1, 2] = "-56";
+            //Movimientos[1, 0] = "Pago con tarjeta de gasollineras.";
+            //Movimientos[1, 1] = "18/05/11";
+            //Movimientos[1, 2] = "-56";
 
-            Movimientos[2, 0] = "Recibo de funddaciones y o.n.g.";
-            Movimientos[2, 1] = "18/05/11";
-            Movimientos[2, 2] = "-25";
+            //Movimientos[2, 0] = "Recibo de funddaciones y o.n.g.";
+            //Movimientos[2, 1] = "18/05/11";
+            //Movimientos[2, 2] = "-25";
 
-            Movimientos[3, 0] = "Pago con tarjeta en medicina, farma...";
-            Movimientos[3, 1] = "17/05/11";
-            Movimientos[3, 2] = "-45.31";
+            //Movimientos[3, 0] = "Pago con tarjeta en medicina, farma...";
+            //Movimientos[3, 1] = "17/05/11";
+            //Movimientos[3, 2] = "-45.31";
 
-            Movimientos[4, 0] = "Pago con tarjeta en gasolineras.";
-            Movimientos[4, 1] = "17/05/11";
-            Movimientos[4, 2] = "-60";
+            //Movimientos[4, 0] = "Pago con tarjeta en gasolineras.";
+            //Movimientos[4, 1] = "17/05/11";
+            //Movimientos[4, 2] = "-60";
 
-            for (int i = 0; i < Movimientos.GetLength(0); i++)
+            //for (int i = 0; i < Movimientos.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < Movimientos.GetLength(1); j++)
+            //    {
+            //        /* Aquí uso el método Math.Abs que devuelve el valor absoluto de un número (es decir que le quita el signo).
+            //         * También pude poner el valor positivo en el arreglo, pero decidi hacerlo de esta forma.
+            //         */
+
+            //        {
+            //            if (Math.Abs(decimal.Parse(Movimientos[i,2])) > 50) 
+            //            Console.WriteLine("{0}", Movimientos[i, j]);
+            //        }
+            //    }
+            //}
+            //Console.ReadLine();
+
+            /* 10- La ventana de la derecha presenta varios listados, unos dentro de otros.
+             * De forma jerárquica vemos los diferentes servicios que tiene el cliente en letra azul
+             * “Cuentas, Préstamos, Tarjetas y Seguros” y dentro de cada uno de tales servicios
+             * se listan todos los tipos de servicios que tiene disponibles.
+             * 
+             * ¿Con qué 2 bucles podrías recorrer tal información? ¿De qué forma los
+             * anidarías? ¿Serías capaz de representar en código la manera de
+             * listar estos diferentes servicios generales y cada uno de los específicos
+             * que tenga el cliente?
+             * 
+             * Puedes elegir tú mismo con que arrays/matrices
+             * estructurar los datos que simulen la ventana mostrada.
+             */
+
+            string[,] Saldos = new string[4, 3];
+            string Header = null;
+            decimal Total = 0;
+
+            // Llenado de la Tabla.
+            Saldos[0, 0] = "Cuentas corrientes";
+            Saldos[0, 1] = "2100";
+            Saldos[0, 2] = "Cuentas ";
+            Saldos[1, 0] = "Cuentas corrientes";
+            Saldos[1, 1] = "1000";
+            Saldos[1, 2] = "Cuentas ";
+            Saldos[2, 0] = "Préstamos personales";
+            Saldos[2, 1] = "10000";
+            Saldos[2, 2] = "Préstamos";
+            Saldos[3, 0] = "Tarjetas de crédito";
+            Saldos[3, 1] = "5250";
+            Saldos[3, 2] = "Tarjetas";
+
+            for (int i = 0; i < Saldos.GetLength(0); i++)
             {
-                for (int j = 0; j < Movimientos.GetLength(1); j++)
+                
+                for (int j = 0; j < Saldos.GetLength(1)-1; j++)
                 {
-                    /* Aquí uso el método Math.Abs que devuelve el valor absoluto de un número (es decir que le quita el signo).
-                     * También pude poner el valor positivo en el arreglo, pero decidi hacerlo de esta forma.
-                     */
-
+                    // Condición para cambiar el encabezado.
+                    if (Header != Saldos[i, 2])
                     {
-                        if (Math.Abs(decimal.Parse(Movimientos[i,2])) > 50) 
-                        Console.WriteLine("{0}", Movimientos[i, j]);
+                        Header = Saldos[i, 2];
+                        // Ciclo para determinar el total del encabezado.
+                        for (int k = 0; k <= Saldos.GetLength(1); k++)
+                        {
+                            if (Header == Saldos[k,2])
+                            {
+                                Total += decimal.Parse(Saldos[k, 1]);
+                            }
+                        }
+
+                        // Impresión para el encabezado con el total.
+                        Console.WriteLine("{0}\t\t\t{1} Gs.", Saldos[i, 2], Total);
+                        Total = 0;
+                    }
+                    // Impresión de datos
+                    if (j == 0)
+                    {
+                        Console.Write("{0}\t", Saldos[i, j]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("{0} Gs.", Saldos[i, j]);
                     }
                 }
             }
