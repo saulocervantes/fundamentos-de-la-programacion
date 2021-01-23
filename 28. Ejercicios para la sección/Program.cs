@@ -35,14 +35,27 @@ namespace _28.Ejercicios_para_la_sección
 
         public static void reproducirEjercicio(byte Repeticiones, string NombreEjercicio, byte Descanso = 0)
         {
-
+            var CursorEjercicio = 0;
+            var CursorDescanso = 1;
             for (int i = 1; i <= Repeticiones; i++)
             {
+                Console.SetCursorPosition(0, CursorEjercicio);
+                CursorEjercicio += 2;
                 Console.WriteLine("Reproduciendo ejercicio {0} serie: {1}", NombreEjercicio, i);
+
+                DateTime Fin = DateTime.Now.AddSeconds(Descanso);
+                Console.CursorVisible = false;
 
                 if (i == Repeticiones)// Si esta es es la última repetición no se reproduce el descanso.
                     break;
-                Console.WriteLine("Reproduciendo descanso de {0} segundos", Descanso);
+
+                while (DateTime.Now < Fin)
+                {
+                    Console.SetCursorPosition(0, CursorDescanso);
+                    var Diferencia = Fin - DateTime.Now;
+                    Console.WriteLine($"Descanso restante: {Diferencia.Seconds} segundos");
+                }
+                CursorDescanso += 2;
             }
             Console.Read();
 
