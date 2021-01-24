@@ -31,14 +31,45 @@ namespace _28.Ejercicios_para_la_sección
          * al cabo...se trata de archivos en ambos casos. De modo que podemos hacerlo
          * en una misma función. A esto se le llama reutilizar código para optimizar
          */
+
+        /*
+         * 4- Bien, ya tenemos la manera de reproducir cada serie el número de veces que se
+         * precise y los descansos tantos segundos como requiera cada serie. Ahora falta la
+         * manera de poder administrar el ejercicio completo indicando cuántas series
+         * tendrá y el número de repeticiones y descanso que tiene cada uno de ellas
+         */
+
         static void Main(string[] args)
         {
-            reproducirEjercicio("sentadilla", 5, 5);
+            byte Respuesta = 0;
+
+            while (Respuesta == 0)
+            {
+                reproducirEjercicio();
+                Console.WriteLine("¿Deseas hacer otro ejercicio? 0.-Sí, 1.-No");
+                Respuesta = byte.Parse(Console.ReadLine());
+                Console.Clear();
+            }
+            Console.WriteLine("Fin del ejercicio.");
+            Console.ReadLine();
+
         }
 
         public static void reproducirEjercicio(string NombreEjercicio)
         {
             Console.WriteLine("Reproduciendo ejercicio {0}", NombreEjercicio);
+        }
+
+        public static void reproducirEjercicio()
+        {
+            Console.WriteLine("Ingresa el nombre del ejercicio:");
+            string Ejercicio = Console.ReadLine();
+            Console.WriteLine("Ingresa el número de repeticiones:");
+            byte Repeticiones = byte.Parse(Console.ReadLine());
+            Console.WriteLine("Ingresa el número de segundos en el descanso:");
+            byte Descanso = byte.Parse(Console.ReadLine());
+            Console.Clear();
+            reproducirSerie(Ejercicio, Repeticiones, Descanso);
         }
 
         public static void reproducirArchivo(string NombreEjercicio, byte Descanso, int CursorDescanso, int Repeticion)
@@ -63,7 +94,7 @@ namespace _28.Ejercicios_para_la_sección
             
         }
 
-        public static void reproducirEjercicio(string NombreEjercicio, byte Repeticiones, byte Descanso = 0)
+        public static void reproducirSerie(string NombreEjercicio, byte Repeticiones, byte Descanso = 0)
         {
             var CursorEjercicio = 0;
             var CursorDescanso = 1;
@@ -74,12 +105,16 @@ namespace _28.Ejercicios_para_la_sección
 
                 reproducirArchivo(NombreEjercicio, 0, CursorDescanso, i);
                 if (i == Repeticiones)// Si esta es es la última repetición no se reproduce el descanso.
+                {
+                    Console.WriteLine("Fin del ejercicio");
                     break;
+                }
+
                 reproducirArchivo(NombreEjercicio, Descanso, CursorDescanso, i);
 
                 CursorDescanso += 2;
             }
-            Console.ReadLine();
+            //Console.ReadLine();
         }
     }
 }
