@@ -39,6 +39,11 @@ namespace _28.Ejercicios_para_la_sección
          * tendrá y el número de repeticiones y descanso que tiene cada uno de ellas
          */
 
+        /*
+         * 5- Para hacerlo funcionar sólo haría falta invocar a la función ejercicio.
+         * Ej:
+         */
+
         static void Main(string[] args)
         {
             byte Respuesta = 0;
