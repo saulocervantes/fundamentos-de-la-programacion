@@ -23,9 +23,17 @@ namespace _28.Ejercicios_para_la_sección
          * el número de veces que se tiene que realizar el movimiento y el número de
          * segundos de descanso que corresponde a tal serie.
          */
+
+        /*
+         * 3- Ahora necesitamos otra función a la que llamar para reproducir el gif
+         * del personaje descansando tras cada serie ¿Creamos otra función nueva? ¿O podríamos reutilizar la que reproduce
+         * los movimientos del ejercicio para también reproducir los descansos? Al fin y
+         * al cabo...se trata de archivos en ambos casos. De modo que podemos hacerlo
+         * en una misma función. A esto se le llama reutilizar código para optimizar
+         */
         static void Main(string[] args)
         {
-            reproducirEjercicio(5, "sentadilla", 5);
+            reproducirEjercicio("sentadilla", 5, 5);
         }
 
         public static void reproducirEjercicio(string NombreEjercicio)
@@ -33,20 +41,29 @@ namespace _28.Ejercicios_para_la_sección
             Console.WriteLine("Reproduciendo ejercicio {0}", NombreEjercicio);
         }
 
-        public static void reproducirDescanso(byte Descanso, int CursorDescanso)
+        public static void reproducirArchivo(string NombreEjercicio, byte Descanso, int CursorDescanso, int Repeticion)
         {
             DateTime Fin = DateTime.Now.AddSeconds(Descanso);
             Console.CursorVisible = false;
 
-            while (DateTime.Now < Fin)
+            if (Descanso > 0)
             {
-                Console.SetCursorPosition(0, CursorDescanso);
-                var Diferencia = Fin - DateTime.Now;
-                Console.WriteLine($"Descanso restante: {Diferencia.Seconds} segundos");
+                while (DateTime.Now < Fin)
+                {
+                    Console.SetCursorPosition(0, CursorDescanso);
+                    var Diferencia = Fin - DateTime.Now;
+                    Console.WriteLine($"Descanso restante: {Diferencia.Seconds} segundos");
+                }
             }
+            else
+            {
+                Console.WriteLine("Reproduciendo ejercicio {0} serie: {1}", NombreEjercicio, Repeticion);
+            }
+
+            
         }
 
-        public static void reproducirEjercicio(byte Repeticiones, string NombreEjercicio, byte Descanso = 0)
+        public static void reproducirEjercicio(string NombreEjercicio, byte Repeticiones, byte Descanso = 0)
         {
             var CursorEjercicio = 0;
             var CursorDescanso = 1;
@@ -54,17 +71,15 @@ namespace _28.Ejercicios_para_la_sección
             {
                 Console.SetCursorPosition(0, CursorEjercicio);
                 CursorEjercicio += 2;
-                Console.WriteLine("Reproduciendo ejercicio {0} serie: {1}", NombreEjercicio, i);
 
+                reproducirArchivo(NombreEjercicio, 0, CursorDescanso, i);
                 if (i == Repeticiones)// Si esta es es la última repetición no se reproduce el descanso.
                     break;
-
-                reproducirDescanso(Descanso, CursorDescanso);
+                reproducirArchivo(NombreEjercicio, Descanso, CursorDescanso, i);
 
                 CursorDescanso += 2;
             }
             Console.ReadLine();
-
         }
     }
 }
