@@ -29,6 +29,12 @@ namespace _35.Ejercicios_para_la_sección
          * entre vehículos de tierra?
          * R.- Rebasar, derrapar, etc.
          */
+
+        /*
+         * 5 - ¿Qué otros objetos crearías? ¿Con qué atributos y métodos exclusivos?
+         * R.- Bicicleta con saltar, ajustarCadena y aceitarCadena.
+         */
+
         static void Main(string[] args)
         {
         }
@@ -157,7 +163,7 @@ namespace _35.Ejercicios_para_la_sección
         }
     }
 
-    public class Camion :Terrestre
+    public class Camion : Terrestre
     {
         public Camion(byte ruedas, float altura, float kilosCargados, string matricula, float velocidadMaxima, byte capacidadPasajeros, string nombreConductor, string marca, string modelo)
             : base(matricula, velocidadMaxima, capacidadPasajeros, nombreConductor, modelo, marca)
@@ -234,7 +240,7 @@ namespace _35.Ejercicios_para_la_sección
         }
     }
 
-    public class Tren :Terrestre
+    public class Tren : Terrestre
     {
         public Tren(byte vagones, string estacionOrigen, string estacionDestino, string matricula, float velocidadMaxima, byte capacidadPasajeros, string nombreConductor, string marca, string modelo)
             : base(matricula, velocidadMaxima, capacidadPasajeros, nombreConductor, modelo, marca)
@@ -247,14 +253,14 @@ namespace _35.Ejercicios_para_la_sección
         public byte Vagones { get; set; }
         public string EstacionOrigen { get; set; }
         public string EstacionDestino { get; set; }
-        void definirTrayecto()
+        public void definirTrayecto()
         {
 
         }
     }
-    public class Avion:Aereo
+    public class Avion : Aereo
     {
-        public Avion(float pesoMaximo, float velocidadMaxima, byte capacidadPasajeros, string nombreConductor, string marca, string modelo) 
+        public Avion(float pesoMaximo, float velocidadMaxima, byte capacidadPasajeros, string nombreConductor, string marca, string modelo)
             : base(pesoMaximo, velocidadMaxima, capacidadPasajeros, nombreConductor, marca, modelo)
         {
         }
@@ -262,11 +268,28 @@ namespace _35.Ejercicios_para_la_sección
         public byte Motores { get; set; }
         public byte SalidasEmergencia { get; set; }
         public string EstadoRuedaAuxiliares { get; set; }
-        void Despegar()
+        public void Despegar()
         {
 
         }
-        void Aterrizar()
+        public void Aterrizar()
+        {
+
+        }
+    }
+
+    public class Bicicleta : Terrestre
+    {
+        public Bicicleta(string matricula, float velocidadMaxima, byte capacidadPasajeros, string nombreConductor, string marca, string modelo) : base(matricula, velocidadMaxima, capacidadPasajeros, nombreConductor, marca, modelo)
+        {
+        }
+
+        public void ajustarCadena()
+        {
+
+        }
+
+        public void saltar()
         {
 
         }
