@@ -18,6 +18,11 @@ namespace _35.Ejercicios_para_la_sección
          * 2 - ¿Qué otros atributos y métodos añadirías a cada clase?
          * R.- Color, profundidad, marca, modelo, etc.
          */
+
+        /*
+         * 3 - ¿Qué funciones crearías para hacer uso del polimorfismo a nivel global?
+         * R.- Cargar combustible, estacionar, maniobraDefensiva, etc.
+         */
         static void Main(string[] args)
         {
         }
@@ -50,6 +55,16 @@ namespace _35.Ejercicios_para_la_sección
 
         }
         public void IntroducirPasajero()
+        {
+
+        }
+
+        public void Estacionar()
+        {
+
+        }
+
+        public void CargarCombustible()
         {
 
         }
