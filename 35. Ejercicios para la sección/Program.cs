@@ -23,6 +23,12 @@ namespace _35.Ejercicios_para_la_sección
          * 3 - ¿Qué funciones crearías para hacer uso del polimorfismo a nivel global?
          * R.- Cargar combustible, estacionar, maniobraDefensiva, etc.
          */
+
+        /*
+         * 4 - ¿Qué funciones crearías para hacer uso del polimorfismo únicamente
+         * entre vehículos de tierra?
+         * R.- Rebasar, derrapar, etc.
+         */
         static void Main(string[] args)
         {
         }
@@ -94,6 +100,7 @@ namespace _35.Ejercicios_para_la_sección
         {
 
         }
+
     }
 
     public class Terrestre : Vehiculo
@@ -106,6 +113,16 @@ namespace _35.Ejercicios_para_la_sección
 
         public string Matricula { get; set; }
         public string Verificacion { get; set; }
+
+        public void derrapar()
+        {
+
+        }
+
+        public void cambiarNeumatico()
+        {
+
+        }
     }
 
     public class Aereo : Vehiculo
@@ -154,15 +171,17 @@ namespace _35.Ejercicios_para_la_sección
         public float Altura { get; set; }
         public float KilosCargados { get; set; }
         public byte Remolques { get; set; }
-        void RecogerCArga()
+        public void recogerCarga()
         {
 
         }
 
-        void entregarCarga()
+        public void entregarCarga()
         {
 
         }
+
+
     }
 
     public class Globo : Aereo
